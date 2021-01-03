@@ -1,6 +1,5 @@
 # Pre-Trained Dog Image Classifier
 Implement code in python to use a pre-trained image classifier to identify dog breeds
-------------------------------------------------------------------------------------------
 
 ## Principal Objectives:
 1. Correctly identify which pet images are of dogs (even if breed is misclassified) and which pet images aren't of dogs.
@@ -12,47 +11,47 @@ Implement code in python to use a pre-trained image classifier to identify dog b
 
 ## Project implementation details:
 1. Time image classifier program
-..* Use Time Module to compute program runtime
+* Use Time Module to compute program runtime
 2. Get program Inputs from the user
-..* Use command line arguments to get user inputs
+* Use command line arguments to get user inputs
 3. Create Pet Images Labels
-..* Use the pet images filenames to create labels
-..* Store the pet image labels in a data structure (e.g. dictionary)
+* Use the pet images filenames to create labels
+* Store the pet image labels in a data structure (e.g. dictionary)
 4. Create Classifier Labels and Compare Labels
-..* Use the Classifier function to classify the images and create the classifier labels
-..* Compare Classifier Labels to Pet Image Labels
-..* Store Pet Labels, Classifier Labels, and their comparison in a complex data structure (e.g. dictionary of lists)
+* Use the Classifier function to classify the images and create the classifier labels
+* Compare Classifier Labels to Pet Image Labels
+* Store Pet Labels, Classifier Labels, and their comparison in a complex data structure (e.g. dictionary of lists)
 5. Classifying Labels as "Dogs" or "Not Dogs"
-..* Classify all Labels as "Dogs" or "Not Dogs" using dognames.txt file
-..* Store new classifications in the complex data structure (e.g. dictionary of lists)
+* Classify all Labels as "Dogs" or "Not Dogs" using dognames.txt file
+* Store new classifications in the complex data structure (e.g. dictionary of lists)
 6. Calculate the Results
-..* Use Labels and their classifications to determine how well the algorithm worked on 	   classifying images
+* Use Labels and their classifications to determine how well the algorithm worked on 	  classifying images
 7. Print the Results
 &nbsp;  
 &nbsp;
 
 ## The project meets the following specifications:
-Timing Code:
-..* calls the time functions before the start of main code and after the main logic has been finished
-Command Line arguments:
-..* adds command line argument for '--dir', uses default ='pet_images/'
-..* adds command line argument for '--arch', uses default='vgg'
-..* adds command line argument for '--dogfile', uses default='dognames.txt'
-Pet Image Labels:
-..* Makes sure files starting with '.' are ignored. Checks for '.' using a conditional statement.
-..* Dictionary key and label are in the correct format and retrieves 40 key-value pairs.
+1. Timing Code:
+* calls the time functions before the start of main code and after the main logic has been finished
+2. Command Line arguments:
+* adds command line argument for '--dir', uses default ='pet_images/'
+* adds command line argument for '--arch', uses default='vgg'
+* adds command line argument for '--dogfile', uses default='dognames.txt'
+3. Pet Image Labels:
+* Makes sure files starting with '.' are ignored. Checks for '.' using a conditional statement.
+* Dictionary key and label are in the correct format and retrieves 40 key-value pairs.
 e.g:- {'Poodle_07956.jpg': ['poodle'], 'fox_squirrel_01.jpg': ['fox squirrel'] ... }
-..* 'in_arg.dir' is passed as an argument inside check_images.py while calling the get_pet_labels function.
-Classifying Images:
-..* Appends images_dir to each value before making the function call.
-..* classifier(images_dir+users_key, model)
-..* Convert the output to lower case and strip any whitespaces
-..* Appends 1 to correct label, and 0 to falsely classified values
-Classifying Labels as Dogs:
-..* Check the displayed output and see if all matches are appropriately displayed.
-..* Check the displayed output and see if all non matches are appropriately displayed
-Results:
-..* All three models score as expected.
+* 'in_arg.dir' is passed as an argument inside check_images.py while calling the get_pet_labels function.
+4. Classifying Images:
+* Appends images_dir to each value before making the function call.
+* classifier(images_dir+users_key, model)
+* Convert the output to lower case and strip any whitespaces
+* Appends 1 to correct label, and 0 to falsely classified values
+5. Classifying Labels as Dogs:
+* Check the displayed output and see if all matches are appropriately displayed.
+* Check the displayed output and see if all non matches are appropriately displayed
+6. Results:
+* All three models score as expected.
 &nbsp;  
 &nbsp;
 
@@ -115,22 +114,22 @@ If instead you are working with the uploaded images , you will need to replace a
 ## Questions addressed regarding classification of uploaded images:
 1. Did the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed? If not, report the differences in the classifications.
  
-ResNet and VGG model classified the dog breed as "basset, basset hound" and AlexNet 
+* ResNet and VGG model classified the dog breed as "basset, basset hound" and AlexNet 
 classified the dog image as of "basenji" breed. The image of the dog I have used is of an Indian Mongrel which is not in the dictionary, but visually the image of the dog resembles a bit closer to basenji.
 
 2. Did each of the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed of dog as that model architecture classified Dog_02.jpg? If not, report the differences in the classifications.
 
-ResNet and AlexNet CNN model classified both the Dog_01.jpg and its flipped image Dog_02.jpg as "basset, basset hound" and "basenji" repectively. But the result provided by VGG model was a bit inconsistent, it classified Dog_01.jpg image as "basset, basset hound" and its flipped image Dog_02.jpg as "brittany spaniel".
+* ResNet and AlexNet CNN model classified both the Dog_01.jpg and its flipped image Dog_02.jpg as "basset, basset hound" and "basenji" repectively. But the result provided by VGG model was a bit inconsistent, it classified Dog_01.jpg image as "basset, basset hound" and its flipped image Dog_02.jpg as "brittany spaniel".
 
 3. Did the three model architectures correctly classify Animal_Name_01.jpg and Object_Name_01.jpg to not be dogs? If not, report the misclassifications.
 
-Yes, all three models correctly classified the images of another animal and object as not dogs.
+* Yes, all three models correctly classified the images of another animal and object as not dogs.
 
 4. Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
 
-AlexNet model identified the dog breed consistently for both the flipped images, as well as classified the coffee mug as cup and the bird as goose. That was pretty satisfactory as compared to the results provided by the other two models ResNet and VGG.
-Though ResNet and VGG correctly identified the uploaded image of other object as coffee mug and bird as "redshank, tringa totanus" and "goose" respectively. But both misidentified the dog breed and VGG provided inconsistent results for the flipped images.
-Thus taking into consideration of identification of all images of dog, bird and coffee mug, AlexNet fared well as the optimal model architecture for classifying closely all the uploaded images.
+* AlexNet model identified the dog breed consistently for both the flipped images, as well as classified the coffee mug as cup and the bird as goose. That was pretty satisfactory as compared to the results provided by the other two models ResNet and VGG.
+* Though ResNet and VGG correctly identified the uploaded image of other object as coffee mug and bird as "redshank, tringa totanus" and "goose" respectively. But both misidentified the dog breed and VGG provided inconsistent results for the flipped images.
+* Thus taking into consideration of identification of all images of dog, bird and coffee mug, AlexNet fared well as the optimal model architecture for classifying closely all the uploaded images.
 &nbsp;  
 &nbsp;
 

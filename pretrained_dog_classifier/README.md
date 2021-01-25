@@ -1,5 +1,5 @@
 # Pre-Trained Dog Image Classifier
-Implement code in python to use a pre-trained image classifier to identify dog breeds
+Implement code in Python for dog image classifier, use CNN (Convolutional Neural Network) trained datasets to identify dog breeds
 
 ## Principal Objectives:
 1. Correctly identify which pet images are of dogs (even if breed is misclassified) and which pet images aren't of dogs.
